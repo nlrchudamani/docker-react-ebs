@@ -1,4 +1,5 @@
 sudo: required 
+language: generic
 services:
   - docker 
 
@@ -6,4 +7,4 @@ before_install:
   - docker run -f Dockerfile.dev -t nlrcmani/simplereactdockerfrontend . 
 
 script:
-  - docker run nlrcmani/simplereactdockerfrontend npm run test -- -- coverage 
+  - docker run e CI=true nlrcmani/simplereactdockerfrontend npm run test -- -- coverage 
